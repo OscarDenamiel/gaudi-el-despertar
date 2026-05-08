@@ -21,15 +21,6 @@
         "headers": [
           { "key": "Cache-Control", "value": "public, max-age=86400" }
         ]
-      },
-      {
-        "source": "/(.*\\.(jpg|png|webp|svg|woff2))",
-        "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-        ]
       }
-    ],
-    "rewrites": [
-      { "source": "/((?!api/).*)", "destination": "/index.html" }
     ]
   }
