@@ -1,0 +1,12 @@
+# robots.txt — Gaudí, el despertar del geni
+# https://gaudieldespertardelgeni.cat/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gaudieldespertardelgeni.cat/sitemap.xml
+
+# No indexar recursos estàtics innecessaris
+Disallow: /assets/fonts/
+Disallow: /*.json$
