@@ -31,22 +31,21 @@
 
   <!-- Schema.org TheaterEvent -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"TheaterEvent","name":"Gaudí, el despertar del geni","description":"Espectacle musical familiar que reviu la infantesa d'Antoni Gaudí i el despertar de la seva creativitat. Una obra sobre superació, natura i imaginació.","url":"https://gaudieldespertardelgeni.cat","startDate":"2026-09-12","endDate":"2026-12-31","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"PerformingArtsTheater","name":"Teatre Victòria","address":{"@type":"PostalAddress","streetAddress":"Paral·lel, 67-69","addressLocality":"Barcelona","addressRegion":"Catalunya","postalCode":"08004","addressCountry":"ES"}},"organizer":{"@type":"Organization","name":"Trilope Productions"},"image":"https://gaudieldespertardelgeni.cat/og-image.jpg","offers":{"@type":"Offer","availability":"https://schema.org/InStock","url":"https://entrades.gaudieldespertardelgeni.cat","priceCurrency":"EUR"}}
-  </script>
+  {"@context":"https://schema.org","@type":"TheaterEvent","name":"Gaudí: El despertar del geni","description":"Espectacle musical familiar que reviu la infantesa d'Antoni Gaudí. Basada en fets reals, combina pop, rock, música clàssica i cançons tradicionals catalanes en un autèntic trencadís sonor.","url":"https://gaudieldespertar.cat","startDate":"2026-11-01","endDate":"2027-01-31","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"PerformingArtsTheater","name":"Teatre Poliorama","address":{"@type":"PostalAddress","streetAddress":"La Rambla, 115","addressLocality":"Barcelona","addressRegion":"Catalunya","postalCode":"08002","addressCountry":"ES"}},"organizer":{"@type":"Organization","name":"Trílope Productions"},"performer":{"@type":"Person","name":"Estel Aparicio"},"director":{"@type":"Person","name":"Cristina Estarelles"},"image":"https://gaudieldespertar.cat/og-image.jpg","offers":{"@type":"Offer","availability":"https://schema.org/InStock","url":"https://www.teatrepoliorama.com","priceCurrency":"EUR"}}</script>
 
   <!-- GA4 — substitueix G-YHHMSBHEHC pel teu Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGT8W5FHQQ"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHHMSBHEHC"></script>
   <script>
     window.dataLayer=window.dataLayer||[];
     function gtag(){dataLayer.push(arguments);}
     gtag('js',new Date());
-    gtag('config','G-EGT8W5FHQQ',{page_title:'Gaudí · El despertar del geni',link_attribution:true});
+    gtag('config','G-YHHMSBHEHC',{page_title:'Gaudí · El despertar del geni',link_attribution:true});
   </script>
 
   <!-- Fonts: Cormorant Garamond (display) + DM Sans (UI) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
 
@@ -76,9 +75,9 @@
   --gold-lt:   #CFA050;   /* or clar hover */
   --burn:      #7A3510;   /* cremat carrete */
 
-  --f-script:  'Dancing Script', cursive;       /* caligrafía manuscrita */
-  --f-display: 'Cormorant Garamond', Georgia, serif; /* display elegant */
-  --f-ui:      'DM Sans', system-ui, sans-serif;
+  --f-script:  'Playfair Display', Georgia, serif;  /* títols display */
+  --f-display: 'Playfair Display', Georgia, serif;  /* subtítols i quotes */
+  --f-ui:      'DM Sans', system-ui, sans-serif;    /* UI i cos de text */
 
   --r:   0.25rem;
   --ease: cubic-bezier(.25,.46,.45,.94);
@@ -95,7 +94,7 @@
    RESET
 ───────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px;}
 body{
   background:var(--paper);
   color:var(--sepia);
@@ -149,9 +148,10 @@ body::after{
   box-shadow:0 1px 0 rgba(200,168,122,.2);
 }
 .nav-logo{
-  font-family:var(--f-script);
-  font-size:1.5rem;
+  font-family:var(--f-display);
+  font-size:1.15rem;
   font-weight:700;
+  font-style:italic;
   color:var(--cream);
   letter-spacing:.02em;
   flex-shrink:0;
@@ -167,7 +167,7 @@ body::after{
   align-items:center;
 }
 .nav-links a{
-  font-size:.75rem;
+  font-size:.875rem;
   font-weight:500;
   letter-spacing:.1em;
   text-transform:uppercase;
@@ -211,11 +211,12 @@ body::after{
 }
 .mobile-menu.open{opacity:1;visibility:visible;}
 .mobile-menu a{
-  font-family:var(--f-script);
-  font-size:clamp(2rem,7vw,3rem);
-  font-weight:700;
+  font-family:var(--f-display);
+  font-size:clamp(2rem,7vw,2.8rem);
+  font-weight:600;
+  font-style:italic;
   color:var(--cream);
-  letter-spacing:.02em;
+  letter-spacing:.01em;
   transition:color .2s;
 }
 .mobile-menu a:hover{color:var(--parch-lt);}
@@ -226,7 +227,7 @@ body::after{
   padding:.9rem 2.5rem;
   border-radius:2px;
   font-family:var(--f-ui)!important;
-  font-size:.85rem!important;
+  font-size:.9375rem!important;
   font-weight:700!important;
   letter-spacing:.15em;
   text-transform:uppercase;
@@ -311,84 +312,91 @@ body::after{
 
 .hero-content{
   position:relative;z-index:2;
-  padding:var(--sp-xl) var(--sp-md) var(--sp-xl);
-  max-width:680px;
+  padding:var(--sp-lg) var(--sp-md) var(--sp-lg);
+  max-width:1100px;
   width:100%;
   margin-inline:auto;
   box-sizing:border-box;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  min-height:100vh;
+  padding-bottom:clamp(2rem,6vh,4rem);
 }
 @media(min-width:1200px){
   #hero{align-items:center;}
   .hero-content{
-    max-width:1100px;
     padding-left:calc((100vw - 1100px)/2 + var(--sp-md));
     padding-right:calc((100vw - 1100px)/2 + var(--sp-md));
   }
 }
 
-.hero-kicker{
-  display:inline-flex;align-items:center;gap:.5rem;
-  font-size:.75rem;font-weight:600;
-  letter-spacing:.2em;text-transform:uppercase;
-  color:var(--parch-lt);
-  margin-bottom:var(--sp-md);
-  text-shadow:0 1px 6px rgba(0,0,0,.5);
-}
-.hero-kicker::before{
-  content:'';display:block;
-  width:24px;height:1px;background:var(--parch);opacity:.7;
-}
+/* kicker ocult — eliminat visualment, conservat per SEO */
+.hero-kicker{display:none;}
 
-/* Títol caligràfic — Dancing Script per imitar la tipografia del cartell */
+/* Títol principal — Playfair Display */
 .hero-title{
   font-family:var(--f-script);
-  font-size:clamp(3.8rem, 14vw, 8.5rem);
-  font-weight:700;
-  line-height:.9;
+  font-size:clamp(4rem, 14vw, 9rem);
+  font-weight:800;
+  line-height:.92;
   color:var(--ink);
-  margin-bottom:.15em;
-  letter-spacing:-.01em;
+  margin-bottom:.2em;
+  letter-spacing:-.02em;
   text-shadow:
-    2px 3px 8px rgba(15,9,5,.4),
-    0 1px 0 rgba(15,9,5,.3);
-  /* Lleugera inclinació com al cartell */
-  transform:rotate(-1.5deg);
-  transform-origin:left center;
-  display:inline-block;
+    2px 3px 12px rgba(15,9,5,.35),
+    0 1px 0 rgba(15,9,5,.2);
+  display:block;
 }
 .hero-title em{
   display:block;
   font-family:var(--f-script);
-  font-style:normal;
-  font-weight:600;
-  font-size:clamp(1.5rem, 5.5vw, 3.2rem);
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(1.6rem, 5.5vw, 3.5rem);
   color:var(--ink);
-  line-height:1.2;
-  margin-top:.1em;
+  line-height:1.15;
+  margin-top:.15em;
   letter-spacing:.01em;
-  transform:rotate(-1deg) translateX(2%);
-  text-shadow:1px 2px 6px rgba(15,9,5,.35);
+  text-shadow:1px 2px 8px rgba(15,9,5,.3);
 }
 
 .hero-sub{
   font-family:var(--f-display);
   font-style:italic;
-  font-size:clamp(.95rem,2.5vw,1.1rem);
+  font-size:clamp(1.05rem, 2.5vw, 1.3rem);
   font-weight:300;
-  color:rgba(242,230,204,.8);
-  max-width:400px;
-  margin-bottom:var(--sp-lg);
+  color:rgba(242,230,204,.85);
+  max-width:560px;
+  margin:0 auto var(--sp-md);
   line-height:1.65;
   text-shadow:0 1px 4px rgba(0,0,0,.5);
-  transform:rotate(0deg);
 }
 
+/* Botons: columna full-width en mobile, fila en ≥480px */
 .hero-btns{
-  display:flex;flex-direction:column;gap:.75rem;
-  margin-bottom:var(--sp-xl);
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  gap:.75rem;
+  margin-bottom:var(--sp-lg);
+  justify-content:center;
+  align-items:center;
+  width:100%;
 }
-@media(min-width:380px){
-  .hero-btns{flex-direction:row;flex-wrap:wrap;}
+.hero-btns .btn-cta,
+.hero-btns .btn-ghost{
+  flex:1 1 240px;
+  max-width:320px;
+}
+@media(min-width:600px){
+  .hero-btns .btn-cta,
+  .hero-btns .btn-ghost{
+    flex:0 0 auto;
+    max-width:none;
+  }
 }
 
 .btn-cta{
@@ -396,7 +404,7 @@ body::after{
   background:var(--ink);
   color:var(--parch-lt);
   border:1px solid rgba(200,168,122,.3);
-  font-size:.82rem;font-weight:600;
+  font-size:.875rem;font-weight:600;
   letter-spacing:.18em;text-transform:uppercase;
   padding:.9rem 2rem;
   border-radius:var(--r);
@@ -416,7 +424,7 @@ body::after{
   display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
   background:transparent;
   color:var(--cream);
-  font-size:.82rem;font-weight:500;
+  font-size:.875rem;font-weight:500;
   letter-spacing:.12em;text-transform:uppercase;
   padding:.9rem 1.5rem;
   border:1px solid rgba(242,230,204,.3);
@@ -434,13 +442,14 @@ body::after{
 /* Hero pills */
 .hero-pills{
   display:flex;flex-wrap:wrap;gap:.5rem;
+  justify-content:center;
 }
 .pill{
   display:inline-flex;align-items:center;gap:.35rem;
   background:rgba(15,9,5,.35);
   border:1px solid rgba(200,168,122,.25);
   color:rgba(242,230,204,.7);
-  font-size:.75rem;font-weight:500;
+  font-size:.875rem;font-weight:500;
   letter-spacing:.06em;
   padding:.3rem .75rem;
   border-radius:999px;
@@ -454,7 +463,7 @@ body::after{
   transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:6px;
   color:rgba(242,230,204,.4);
-  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  font-size:.875rem;letter-spacing:.2em;text-transform:uppercase;
   animation:cue 2.2s ease-in-out infinite;
   z-index:3;
   font-family:var(--f-display);
@@ -496,7 +505,7 @@ body::after{
   display:inline-flex;align-items:center;gap:.5rem;
   font-family:var(--f-display);
   font-style:italic;
-  font-size:.85rem;font-weight:400;
+  font-size:.9375rem;font-weight:400;
   letter-spacing:.06em;
   color:rgba(200,168,122,.55);
   flex-shrink:0;
@@ -517,7 +526,7 @@ body::after{
 .label{
   font-family:var(--f-display);
   font-style:italic;
-  font-size:.85rem;font-weight:400;
+  font-size:.9375rem;font-weight:400;
   letter-spacing:.15em;
   color:var(--rust);
   display:flex;align-items:center;gap:.6rem;
@@ -525,14 +534,14 @@ body::after{
 }
 .label::before{content:'';display:block;width:20px;height:1px;background:var(--rust);opacity:.6;}
 
-/* Títols de secció — Dancing Script per a l'estil del cartell */
+/* Títols de secció — Playfair Display */
 h2.sec-title{
-  font-family:var(--f-script);
-  font-size:clamp(2.4rem,6vw,4rem);
+  font-family:var(--f-display);
+  font-size:clamp(2.2rem,6vw,3.8rem);
   font-weight:700;
-  line-height:1.05;
+  line-height:1.1;
   color:var(--ink);
-  letter-spacing:-.01em;
+  letter-spacing:-.02em;
 }
 h2.sec-title-light{color:var(--cream);}
 
@@ -587,11 +596,12 @@ h2.sec-title-light{color:var(--cream);}
   background:linear-gradient(to top,rgba(20,12,8,.9) 0%,transparent 100%);
 }
 .sinopsis-quote{
-  font-family:var(--f-script);
-  font-size:clamp(1.6rem,4vw,2.2rem);
-  font-weight:700;
+  font-family:var(--f-display);
+  font-size:clamp(1.5rem,4vw,2rem);
+  font-style:italic;
+  font-weight:400;
   color:var(--cream);
-  line-height:1.2;
+  line-height:1.3;
 }
 .sinopsis-quote strong{
   font-weight:700;color:var(--parch-lt);
@@ -622,15 +632,15 @@ h2.sec-title-light{color:var(--cream);}
   text-align:center;
 }
 .stat-num{
-  font-family:var(--f-script);
-  font-size:clamp(2rem,5vw,2.8rem);
-  font-weight:700;
+  font-family:var(--f-display);
+  font-size:clamp(2rem,5vw,2.6rem);
+  font-weight:800;
   color:var(--ink);
   line-height:1;
   display:block;
 }
 .stat-lbl{
-  font-size:.75rem;font-weight:500;
+  font-size:.875rem;font-weight:500;
   letter-spacing:.08em;text-transform:uppercase;
   color:var(--terra);
   display:block;
@@ -696,14 +706,14 @@ h2.sec-title-light{color:var(--cream);}
 .char-role{
   font-family:var(--f-display);
   font-style:italic;
-  font-size:.75rem;font-weight:400;
+  font-size:.875rem;font-weight:400;
   letter-spacing:.1em;
   color:var(--parch);
   margin-bottom:.3rem;
 }
 .char-name{
-  font-family:var(--f-script);
-  font-size:1.3rem;font-weight:700;
+  font-family:var(--f-display);
+  font-size:1.15rem;font-weight:700;
   color:var(--cream);
   line-height:1.2;
   margin-bottom:.3rem;
@@ -711,7 +721,7 @@ h2.sec-title-light{color:var(--cream);}
 .char-desc{
   font-family:var(--f-display);
   font-style:italic;
-  font-size:.85rem;font-weight:300;
+  font-size:.9375rem;font-weight:300;
   color:rgba(200,168,122,.6);
   line-height:1.5;
 }
@@ -719,7 +729,7 @@ h2.sec-title-light{color:var(--cream);}
 /* Drag hint */
 .drag-hint{
   display:flex;align-items:center;gap:.5rem;
-  font-size:.75rem;font-weight:400;
+  font-size:.875rem;font-weight:400;
   color:rgba(244,236,216,.3);
   letter-spacing:.1em;
   margin-top:var(--sp-sm);
@@ -764,12 +774,12 @@ h2.sec-title-light{color:var(--cream);}
 .ficha-table tr:last-child{border-bottom:none;}
 .ficha-table td{
   padding:.8rem 0;
-  font-size:.88rem;
+  font-size:1rem;
   vertical-align:top;
   line-height:1.5;
 }
 .ficha-table td:first-child{
-  font-size:.72rem;font-weight:600;
+  font-size:.875rem;font-weight:600;
   letter-spacing:.12em;text-transform:uppercase;
   color:var(--rust);
   width:38%;
@@ -786,7 +796,7 @@ h2.sec-title-light{color:var(--cream);}
   display:inline-block;
   background:var(--sepia);
   color:var(--parch-lt);
-  font-size:.65rem;font-weight:600;
+  font-size:.875rem;font-weight:600;
   letter-spacing:.08em;text-transform:uppercase;
   padding:.25rem .65rem;
   border-radius:2px;
@@ -826,7 +836,7 @@ h2.sec-title-light{color:var(--cream);}
 }
 .feat-body h4{
   font-family:var(--f-display);
-  font-size:.85rem;font-weight:600;
+  font-size:.9375rem;font-weight:600;
   letter-spacing:.08em;text-transform:uppercase;
   color:var(--parch-lt);
   margin-bottom:.25rem;
@@ -851,7 +861,7 @@ h2.sec-title-light{color:var(--cream);}
   font-size:3.5rem;margin-bottom:.75rem;opacity:.6;
 }
 .spotify-block p{
-  font-size:.78rem;font-weight:300;
+  font-size:.875rem;font-weight:300;
   color:rgba(244,236,216,.45);
   margin-bottom:var(--sp-md);
   font-style:italic;
@@ -860,7 +870,7 @@ h2.sec-title-light{color:var(--cream);}
   display:block;
   background:rgba(0,0,0,.3);
   color:var(--sand);
-  font-size:.7rem;
+  font-size:.875rem;
   padding:.75rem;
   border-radius:var(--r);
   text-align:left;
@@ -922,7 +932,7 @@ h2.sec-title-light{color:var(--cream);}
   display:inline-block;
   font-family:var(--f-display);
   font-style:italic;
-  font-size:.75rem;font-weight:400;
+  font-size:.875rem;font-weight:400;
   letter-spacing:.12em;
   color:var(--parch);
   margin-bottom:.6rem;
@@ -933,21 +943,21 @@ h2.sec-title-light{color:var(--cream);}
   padding:.2rem .6rem;border-radius:2px;
 }
 .date-when{
-  font-family:var(--f-script);
-  font-size:1.35rem;font-weight:700;
+  font-family:var(--f-display);
+  font-size:1.25rem;font-weight:700;
   color:var(--cream);
   line-height:1.15;
   margin-bottom:.4rem;
 }
 .date-where{
-  font-size:.8rem;font-weight:400;
+  font-size:.875rem;font-weight:400;
   color:rgba(200,168,122,.55);
   margin-bottom:.25rem;
 }
 .date-sched{
   font-family:var(--f-display);
   font-style:italic;
-  font-size:.8rem;font-weight:300;
+  font-size:.875rem;font-weight:300;
   color:rgba(200,168,122,.4);
 }
 
@@ -956,7 +966,7 @@ h2.sec-title-light{color:var(--cream);}
   padding-top:var(--sp-md);
 }
 .calendari-cta-wrap p{
-  font-size:.85rem;font-style:italic;
+  font-size:.9375rem;font-style:italic;
   color:rgba(244,236,216,.4);
   margin-bottom:var(--sp-md);
 }
@@ -1023,7 +1033,7 @@ h2.sec-title-light{color:var(--cream);}
   border-radius:2px;
   display:flex;align-items:center;justify-content:center;
   font-family:var(--f-display);
-  font-size:.75rem;font-weight:700;
+  font-size:.875rem;font-weight:700;
   letter-spacing:.12em;
   color:var(--terra);
   text-transform:uppercase;
@@ -1037,16 +1047,16 @@ h2.sec-title-light{color:var(--cream);}
   border-color:transparent;
 }
 .sponsor-name{
-  font-size:.78rem;font-weight:600;
+  font-size:.875rem;font-weight:600;
   letter-spacing:.08em;text-transform:uppercase;
   color:var(--bark);
 }
 .sponsor-type{
-  font-size:.75rem;font-weight:300;
+  font-size:.875rem;font-weight:300;
   font-style:italic;color:var(--terra);
 }
-.sponsor-card.main .sponsor-name{font-size:.85rem;}
-.sponsor-card.main .sponsor-type{font-size:.78rem;}
+.sponsor-card.main .sponsor-name{font-size:.9375rem;}
+.sponsor-card.main .sponsor-type{font-size:.875rem;}
 
 /* ─────────────────────────────────────────────────
    CTA FINAL — full-bleed, cinematic
@@ -1068,9 +1078,10 @@ h2.sec-title-light{color:var(--cream);}
 }
 #cta-final::after{
   content:'Gaudí';
-  font-family:var(--f-script);
+  font-family:var(--f-display);
   font-size:clamp(12rem, 38vw, 28rem);
-  font-weight:700;
+  font-weight:800;
+  font-style:italic;
   color:rgba(200,168,122,.025);
   position:absolute;
   top:50%;left:50%;
@@ -1099,17 +1110,18 @@ h2.sec-title-light{color:var(--cream);}
   content:'';display:block;width:32px;height:1px;background:var(--parch);opacity:.4;
 }
 .cta-final-title{
-  font-family:var(--f-script);
+  font-family:var(--f-display);
   font-size:clamp(2.8rem,9vw,5.5rem);
-  font-weight:700;
+  font-weight:800;
   line-height:1.0;
   color:var(--cream);
   margin-bottom:.2em;
 }
 .cta-final-title em{
-  font-style:normal;
+  font-style:italic;
+  font-weight:400;
   color:var(--parch-lt);
-  font-size:.6em;
+  font-size:.65em;
   display:block;
   margin-top:.1em;
 }
@@ -1127,7 +1139,7 @@ h2.sec-title-light{color:var(--cream);}
   display:inline-flex;align-items:center;gap:.6rem;
   background:var(--parch);
   color:var(--ink);
-  font-size:.88rem;font-weight:700;
+  font-size:1rem;font-weight:700;
   letter-spacing:.2em;text-transform:uppercase;
   padding:1.1rem 2.8rem;
   border-radius:var(--r);
@@ -1142,7 +1154,7 @@ h2.sec-title-light{color:var(--cream);}
 .cta-final-note{
   font-family:var(--f-display);
   font-style:italic;
-  font-size:.8rem;font-weight:300;
+  font-size:.875rem;font-weight:300;
   color:rgba(200,168,122,.3);
   margin-top:var(--sp-md);
 }
@@ -1164,8 +1176,9 @@ footer{
   .footer-inner{grid-template-columns:1fr auto;}
 }
 .footer-brand{
-  font-family:var(--f-script);
-  font-size:1.6rem;font-weight:700;
+  font-family:var(--f-display);
+  font-size:1.4rem;font-weight:700;
+  font-style:italic;
   color:var(--cream);
   margin-bottom:.4rem;
 }
@@ -1173,14 +1186,14 @@ footer{
 .footer-tagline{
   font-family:var(--f-display);
   font-style:italic;
-  font-size:.85rem;font-weight:300;
+  font-size:.9375rem;font-weight:300;
   color:rgba(200,168,122,.3);
 }
 .footer-nav{
   display:flex;flex-wrap:wrap;gap:.6rem var(--sp-md);
 }
 .footer-nav a{
-  font-size:.75rem;font-weight:500;
+  font-size:.875rem;font-weight:500;
   letter-spacing:.1em;text-transform:uppercase;
   color:rgba(200,168,122,.3);
   transition:color .2s;
@@ -1195,7 +1208,7 @@ footer{
   align-items:center;
 }
 .footer-copy{
-  font-size:.75rem;font-weight:300;
+  font-size:.875rem;font-weight:300;
   color:rgba(200,168,122,.2);
   line-height:1.6;
 }
@@ -1214,8 +1227,9 @@ footer{
     <li><a href="#musica"       data-nav="musica">Música</a></li>
     <li><a href="#calendari"    data-nav="calendari">Dates</a></li>
     <li><a href="#patrocinadors" data-nav="patrocinadors">Patrocinadors</a></li>
+    <li><a href="#premsa"       data-nav="premsa">Premsa</a></li>
     <li>
-      <a href="https://entrades.exemple.cat"
+      <a href="https://www.teatrepoliorama.com"
          class="nav-pill"
          data-cta="nav"
          target="_blank" rel="noopener"
@@ -1237,7 +1251,8 @@ footer{
   <a href="#musica"        data-nav="musica_mob">Música</a>
   <a href="#calendari"     data-nav="calendari_mob">Dates</a>
   <a href="#patrocinadors" data-nav="patrocinadors_mob">Patrocinadors</a>
-  <a href="https://entrades.exemple.cat"
+  <a href="#premsa"        data-nav="premsa_mob">Premsa</a>
+  <a href="https://www.teatrepoliorama.com"
      class="mm-cta"
      data-cta="nav_mobile"
      target="_blank" rel="noopener">
@@ -1265,7 +1280,7 @@ footer{
     </p>
 
     <div class="hero-btns">
-      <a href="https://entrades.exemple.cat"
+      <a href="https://www.teatrepoliorama.com"
          class="btn-cta"
          data-cta="hero_primary"
          target="_blank" rel="noopener"
@@ -1362,7 +1377,7 @@ footer{
       <div class="sinopsis-body">
         <p class="label reveal">L'espectacle</p>
         <h2 class="sec-title reveal delay-1" id="sinopsis-title">
-          Un nen.<br>Una malaltia.<br>Un geni.
+          Com neix<br>la genialitat?
         </h2>
 
         <div class="stats-row reveal delay-2" role="list" aria-label="Dades de l'espectacle">
@@ -1381,18 +1396,18 @@ footer{
         </div>
 
         <p class="reveal delay-2">
-          Amb motiu del Centenari de la mort d'Antoni Gaudí, un musical original que reviu la seva infantesa a Reus: un nen marcat per la malaltia que aprèn a veure la natura com ningú, i a transformar el dolor en bellesa.
+          L'any en què es commemora el centenari de la mort d'Antoni Gaudí, arriba un musical que ens convida a descobrir el nen que somiava transformar el món. Amb fantasia, humor i tendresa, l'obra revela la seva lluita contra la malaltia, la connexió amb la natura i el naixement d'un talent extraordinari.
         </p>
         <p class="reveal delay-3" style="font-size:.9rem;color:var(--terra);font-style:italic;margin-top:.5rem;">
-          Escenografia immersiva · Projeccions amb IA · Veus en directe · Totes les edats
+          Basada en fets reals · Música en directe · Per a tota la família
         </p>
 
-        <a href="https://entrades.exemple.cat"
+        <a href="https://www.teatrepoliorama.com"
            class="btn-cta reveal delay-3"
            data-cta="sinopsis"
            target="_blank" rel="noopener"
            style="margin-top:var(--sp-lg);width:fit-content;">
-          Reservar ara
+          Comprar entrades
         </a>
       </div>
 
@@ -1410,56 +1425,56 @@ footer{
     <div class="chars-scroll reveal delay-2" role="list" aria-label="Personatges de l'obra">
 
       <article class="char-card" role="listitem">
-        <div class="char-img char-img-1" data-emoji="👦" aria-label="El nen Gaudí"></div>
+        <div class="char-img char-img-1" data-emoji="👦" aria-label="Anton Gaudí"></div>
         <div class="char-info">
-          <p class="char-role">Protagonista</p>
-          <h3 class="char-name">El nen Gaudí</h3>
-          <p class="char-desc">Malalt, imaginatiu, indomable. Troba en la natura el seu major mestre.</p>
+          <p class="char-role">Protagonista · Estel Aparicio</p>
+          <h3 class="char-name">Anton Gaudí</h3>
+          <p class="char-desc">Un nen marcat per la malaltia que aprèn a veure la natura com ningú i a transformar el dolor en bellesa.</p>
         </div>
       </article>
 
       <article class="char-card" role="listitem">
-        <div class="char-img char-img-2" data-emoji="🎙️" aria-label="Gaudí adult"></div>
+        <div class="char-img char-img-2" data-emoji="🎙️" aria-label="Antoni Gaudí adult"></div>
         <div class="char-info">
           <p class="char-role">Veu en off · Lluís Soler</p>
-          <h3 class="char-name">Gaudí adult</h3>
-          <p class="char-desc">La consciència i la memòria. La veu que guia la història des del futur.</p>
+          <h3 class="char-name">Antoni Gaudí</h3>
+          <p class="char-desc">La veu del geni adult que guia el viatge als seus propis orígens i a la seva infantesa a Reus.</p>
         </div>
       </article>
 
       <article class="char-card" role="listitem">
-        <div class="char-img char-img-3" data-emoji="👨" aria-label="El pare"></div>
+        <div class="char-img char-img-3" data-emoji="👨" aria-label="Francesc Gaudí"></div>
         <div class="char-info">
-          <p class="char-role">Família</p>
-          <h3 class="char-name">El pare</h3>
-          <p class="char-desc">Calderoner de Riudoms. L'ofici manual que desperta la sensibilitat artística del fill.</p>
+          <p class="char-role">El pare · Andreu Domènech</p>
+          <h3 class="char-name">Francesc Gaudí</h3>
+          <p class="char-desc">Calderoner de Riudoms. L'ofici manual i la sensibilitat familiar que desperta el talent del fill.</p>
         </div>
       </article>
 
       <article class="char-card" role="listitem">
-        <div class="char-img char-img-4" data-emoji="👩" aria-label="La mare"></div>
+        <div class="char-img char-img-4" data-emoji="👩" aria-label="Antònia Cornet"></div>
         <div class="char-info">
-          <p class="char-role">Família</p>
-          <h3 class="char-name">La mare</h3>
-          <p class="char-desc">Amor incondicional i fortalesa. El pilar emocional de la família Gaudí.</p>
+          <p class="char-role">La mare · Irene Jòdar</p>
+          <h3 class="char-name">Antònia Cornet</h3>
+          <p class="char-desc">Amor incondicional i fortalesa. El pilar emocional que sosté la família Gaudí.</p>
         </div>
       </article>
 
       <article class="char-card" role="listitem">
-        <div class="char-img char-img-5" data-emoji="👨‍🏫" aria-label="El professor"></div>
+        <div class="char-img char-img-5" data-emoji="👨‍🏫" aria-label="Pare Llanes"></div>
         <div class="char-info">
-          <p class="char-role">Mestre</p>
-          <h3 class="char-name">El professor</h3>
-          <p class="char-desc">Qui veu el talent extraordinari del nen i l'encamina cap al seu destí.</p>
+          <p class="char-role">El mestre · Albert Triola</p>
+          <h3 class="char-name">Pare Llanes</h3>
+          <p class="char-desc">El professor que descobreix el talent extraordinari del nen i l'encamina cap al seu destí.</p>
         </div>
       </article>
 
       <article class="char-card" role="listitem">
-        <div class="char-img char-img-6" data-emoji="👥" aria-label="Els amics"></div>
+        <div class="char-img char-img-6" data-emoji="👥" aria-label="Eduard Toda i Josep Ribera"></div>
         <div class="char-info">
-          <p class="char-role">Conjunt</p>
-          <h3 class="char-name">Els amics</h3>
-          <p class="char-desc">Tres companys i dos figurants que descobreixen el món al costat del jove Antoni.</p>
+          <p class="char-role">Els amics · Núria Masip i Natalia Revilla</p>
+          <h3 class="char-name">Eduard Toda<br>& Josep Ribera</h3>
+          <p class="char-desc">Els companys inseparables que acompanyen el jove Antoni en el seu despertar creatiu.</p>
         </div>
       </article>
 
@@ -1483,81 +1498,33 @@ footer{
 
       <table class="ficha-table reveal delay-2" aria-label="Fitxa tècnica part 1">
         <tbody>
-          <tr>
-            <td>Producció</td>
-            <td>Trilope Productions</td>
-          </tr>
-          <tr>
-            <td>Suport</td>
-            <td>ICEC · Institut Català de les Empreses Culturals</td>
-          </tr>
-          <tr>
-            <td>Patrocinador</td>
-            <td>Casa Batlló — <em>"Casa Batlló presenta"</em></td>
-          </tr>
-          <tr>
-            <td>Veu en off</td>
-            <td>Lluís Soler</td>
-          </tr>
-          <tr>
-            <td>Intèrprets</td>
-            <td>10 actors i músics de l'escena catalana</td>
-          </tr>
-          <tr>
-            <td>Músics</td>
-            <td>5 músics (3 també actuen)</td>
-          </tr>
-          <tr>
-            <td>Cantants</td>
-            <td>8 veus · 100% en directe</td>
-          </tr>
-          <tr>
-            <td>Idioma</td>
-            <td>
-              <div class="badge-row">
-                <span class="badge gold">Català</span>
-                <span class="badge">Musical</span>
-                <span class="badge">Familiar</span>
-              </div>
-            </td>
-          </tr>
+          <tr><td>Creació</td><td>Alfredo Ruiz i Cristina Estarelles</td></tr>
+          <tr><td>Direcció</td><td>Cristina Estarelles</td></tr>
+          <tr><td>Dir. Musical</td><td>Asier Olabarrieta</td></tr>
+          <tr><td>Producció</td><td>Trílope Productions</td></tr>
+          <tr><td>Co-creació</td><td>Casa Batlló</td></tr>
+          <tr><td>Suport</td><td>ICEC · Generalitat de Catalunya</td></tr>
+          <tr><td>Fotografia</td><td>David Ruano</td></tr>
+          <tr><td>Idioma</td><td>
+            <div class="badge-row">
+              <span class="badge gold">Català</span>
+              <span class="badge">Musical</span>
+              <span class="badge">Familiar</span>
+            </div>
+          </td></tr>
         </tbody>
       </table>
 
       <table class="ficha-table reveal delay-3" aria-label="Fitxa tècnica part 2">
         <tbody>
-          <tr>
-            <td>Escenografia</td>
-            <td>Gran format · Telons, tuls · Projeccions il·lustrades amb IA</td>
-          </tr>
-          <tr>
-            <td>Preestrena</td>
-            <td>Juny 2026 · Reus</td>
-          </tr>
-          <tr>
-            <td>Estrena BCN</td>
-            <td>12 setembre 2026 · Teatre Victòria</td>
-          </tr>
-          <tr>
-            <td>Temporada</td>
-            <td>Setembre – Desembre 2026</td>
-          </tr>
-          <tr>
-            <td>Fam. &amp; Oci</td>
-            <td>Dissabtes i diumenges · 12:00 h</td>
-          </tr>
-          <tr>
-            <td>Escolar</td>
-            <td>Dimecres i dijous · Doble sessió matinal (Oct–Nov)</td>
-          </tr>
-          <tr>
-            <td>Capacitat</td>
-            <td>80.000 espectadors previstos · 1a temporada</td>
-          </tr>
-          <tr>
-            <td>Durada</td>
-            <td>~75 minuts · Sense entreacte</td>
-          </tr>
+          <tr><td>Preestrena</td><td>26 juny 2026 · 19h · Teatre Fortuny, Reus</td></tr>
+          <tr><td>Temporada</td><td>Novembre 2026 – Gener 2027</td></tr>
+          <tr><td>Teatre BCN</td><td>Teatre Poliorama, Barcelona</td></tr>
+          <tr><td>Intèrprets</td><td>10 actors i músics de l'escena catalana</td></tr>
+          <tr><td>Veus</td><td>8 cantants · 100% en directe</td></tr>
+          <tr><td>Veu en off</td><td>Lluís Soler</td></tr>
+          <tr><td>Durada</td><td>~75 minuts · Sense entreacte</td></tr>
+          <tr><td>Escenografia</td><td>Sarah Bernardy, Raúl Vilassis i Cristina Estarelles</td></tr>
         </tbody>
       </table>
 
@@ -1573,28 +1540,28 @@ footer{
 
       <div>
         <p class="label reveal" style="color:var(--gold);">Banda sonora original</p>
-        <h2 class="sec-title sec-title-light reveal delay-1" id="musica-title">Música<br>que et portarà al 1852</h2>
+        <h2 class="sec-title sec-title-light reveal delay-1" id="musica-title">Un autèntic<br>trencadís sonor</h2>
 
         <div class="musica-features reveal delay-2">
           <div class="musica-feat">
             <div class="feat-icon" aria-hidden="true">🎵</div>
             <div class="feat-body">
-              <h4>Composició original</h4>
-              <p>Música creada exclusivament per a l'obra, que evoca la Catalunya del XIX</p>
+              <h4>Pop, rock, clàssica i tradicional</h4>
+              <p>Mashups de Led Zeppelin, Mozart, Eminem, The Police i cançons tradicionals catalanes en una mateixa partitura</p>
             </div>
           </div>
           <div class="musica-feat">
             <div class="feat-icon" aria-hidden="true">🎤</div>
             <div class="feat-body">
               <h4>8 veus en directe</h4>
-              <p>Tots els cantants actuen sobre l'escenari. Sense playback, mai</p>
+              <p>Tots els cantants actuen sobre l'escenari. Sense playback, mai. Música viva en cada funció</p>
             </div>
           </div>
           <div class="musica-feat">
             <div class="feat-icon" aria-hidden="true">🎻</div>
             <div class="feat-body">
-              <h4>5 músics en escena</h4>
-              <p>Tres d'ells també interpreten un personatge, fusionant música i drama</p>
+              <h4>Dir. Musical: Asier Olabarrieta</h4>
+              <p>Arranjaments i composicions originals que reflecteixen l'univers gaudinià: la natura, la creativitat i la superació</p>
             </div>
           </div>
         </div>
@@ -1647,43 +1614,43 @@ footer{
 
     <div class="dates-grid">
 
-      <div class="date-card reveal reveal delay-1">
+      <div class="date-card featured reveal delay-1">
         <p class="date-chip">Preestrena</p>
-        <h3 class="date-when">Juny 2026</h3>
-        <p class="date-where">📍 Reus, Catalunya</p>
-        <p class="date-sched">Funcions especials</p>
+        <h3 class="date-when">26 juny 2026</h3>
+        <p class="date-where">📍 Teatre Fortuny, Reus</p>
+        <p class="date-sched">19:00 h · Any Gaudí 2026</p>
       </div>
 
-      <div class="date-card featured reveal delay-2">
-        <p class="date-chip">Estrena oficial</p>
-        <h3 class="date-when">12 set 2026</h3>
-        <p class="date-where">📍 Teatre Victòria, BCN</p>
-        <p class="date-sched">Paral·lel 67-69</p>
+      <div class="date-card reveal delay-2">
+        <p class="date-chip">Temporada Barcelona</p>
+        <h3 class="date-when">Nov 2026 – Gen 2027</h3>
+        <p class="date-where">📍 Teatre Poliorama, Barcelona</p>
+        <p class="date-sched">La Rambla, 115</p>
       </div>
 
       <div class="date-card reveal delay-3">
         <p class="date-chip">Familiar</p>
-        <h3 class="date-when">Set – Des</h3>
+        <h3 class="date-when">Cap de setmana</h3>
         <p class="date-where">🕛 Dissabtes i diumenges</p>
-        <p class="date-sched">Sessions a les 12:00 h</p>
+        <p class="date-sched">Sessions matinals · Familiar</p>
       </div>
 
       <div class="date-card reveal delay-4">
         <p class="date-chip">Escolar</p>
-        <h3 class="date-when">Oct – Nov</h3>
+        <h3 class="date-when">Dies laborables</h3>
         <p class="date-where">🎒 Grups escolars</p>
-        <p class="date-sched">Dimecres i dijous · Matinal</p>
+        <p class="date-sched">Sessions matinals · Reserva prèvia</p>
       </div>
 
     </div>
 
     <div class="calendari-cta-wrap reveal">
-      <p>Consulta totes les dates disponibles</p>
-      <a href="https://entrades.exemple.cat"
+      <p>Consulta totes les dates i compra les teves entrades al Teatre Poliorama</p>
+      <a href="https://www.teatrepoliorama.com"
          class="btn-cta"
          data-cta="calendari"
          target="_blank" rel="noopener">
-        Veure totes les dates
+        Comprar entrades · Poliorama
       </a>
     </div>
   </div>
@@ -1705,7 +1672,7 @@ footer{
         <div class="sponsor-logo">CASA BATLLÓ</div>
         <div>
           <p class="sponsor-name">Casa Batlló</p>
-          <p class="sponsor-type">Patrocinador principal · "Casa Batlló presenta"</p>
+          <p class="sponsor-type">Co-creació i patrocinador principal</p>
         </div>
       </div>
 
@@ -1716,23 +1683,74 @@ footer{
       </div>
 
       <div class="sponsor-card reveal delay-2">
+        <div class="sponsor-logo">GENERALITAT</div>
+        <p class="sponsor-name">Generalitat de Catalunya</p>
+        <p class="sponsor-type">Amb el suport de</p>
+      </div>
+
+      <div class="sponsor-card reveal delay-3">
         <div class="sponsor-logo">TRILOPE</div>
-        <p class="sponsor-name">Trilope</p>
+        <p class="sponsor-name">Trílope</p>
         <p class="sponsor-type">Producció executiva</p>
       </div>
 
-      <div class="sponsor-card reveal delay-3" style="border-style:dashed;opacity:.5;">
-        <div class="sponsor-logo" style="border-style:dashed;">+</div>
-        <p class="sponsor-name">Col·laboradors</p>
-        <p class="sponsor-type">El teu logo aquí</p>
+      <div class="sponsor-card reveal delay-4">
+        <div class="sponsor-logo">POLIORAMA</div>
+        <p class="sponsor-name">Teatre Poliorama</p>
+        <p class="sponsor-type">Teatre de l'espectacle · Barcelona</p>
       </div>
 
-      <div class="sponsor-card reveal delay-4" style="border-style:dashed;opacity:.5;">
-        <div class="sponsor-logo" style="border-style:dashed;">+</div>
-        <p class="sponsor-name">Col·laboradors</p>
-        <p class="sponsor-type">El teu logo aquí</p>
-      </div>
+    </div>
+  </div>
+</section>
 
+
+<!-- ══════ PREMSA ══════ -->
+<section id="premsa" class="section" aria-labelledby="premsa-title" style="background:var(--cream);">
+  <div class="container">
+    <p class="label reveal">Per als mitjans</p>
+    <h2 class="sec-title reveal delay-1" id="premsa-title">Àrea de premsa</h2>
+    <p class="sponsors-intro reveal delay-2">
+      Material disponible per a periodistes i mitjans de comunicació. Per a entrevistes i acreditacions, contacteu directament amb el departament de premsa.
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--sp-sm);margin-bottom:var(--sp-xl);" class="reveal delay-2">
+
+      <a href="#" class="sponsor-card" style="text-decoration:none;cursor:pointer;" aria-label="Descarregar nota de premsa">
+        <div class="sponsor-logo" style="font-size:1.5rem;background:var(--sepia);color:var(--cream);">📄</div>
+        <p class="sponsor-name">Nota de premsa</p>
+        <p class="sponsor-type">PDF · Català</p>
+      </a>
+
+      <a href="#" class="sponsor-card" style="text-decoration:none;cursor:pointer;" aria-label="Descarregar pack de fotos">
+        <div class="sponsor-logo" style="font-size:1.5rem;background:var(--sepia);color:var(--cream);">📸</div>
+        <p class="sponsor-name">Pack de fotos</p>
+        <p class="sponsor-type">Alta resolució · David Ruano</p>
+      </a>
+
+      <a href="#" class="sponsor-card" style="text-decoration:none;cursor:pointer;" aria-label="Descarregar cartell">
+        <div class="sponsor-logo" style="font-size:1.5rem;background:var(--sepia);color:var(--cream);">🖼️</div>
+        <p class="sponsor-name">Cartell oficial</p>
+        <p class="sponsor-type">Alta resolució · Carla Serrat</p>
+      </a>
+
+      <a href="#" class="sponsor-card" style="text-decoration:none;cursor:pointer;" aria-label="Veure vídeo">
+        <div class="sponsor-logo" style="font-size:1.5rem;background:var(--sepia);color:var(--cream);">🎬</div>
+        <p class="sponsor-name">Vídeo de premsa</p>
+        <p class="sponsor-type">Preestrena Reus · Juny 2026</p>
+      </a>
+
+    </div>
+
+    <div class="reveal delay-3" style="background:var(--paper);border:1px solid rgba(122,74,42,.15);padding:var(--sp-lg);border-radius:var(--r);">
+      <p style="font-family:var(--f-display);font-size:1rem;color:var(--sepia);margin-bottom:var(--sp-sm);">
+        <strong>Contacte de premsa</strong>
+      </p>
+      <p style="font-family:var(--f-display);font-style:italic;color:var(--terra);font-size:.95rem;line-height:1.7;">
+        Alfredo Ruiz<br>
+        <a href="mailto:alfredoruiz@casabatllo.cat" style="color:var(--rust);">alfredoruiz@casabatllo.cat</a><br>
+        <a href="tel:+34656898432" style="color:var(--rust);">656 898 432</a>
+      </p>
     </div>
   </div>
 </section>
@@ -1741,26 +1759,26 @@ footer{
 <!-- ══════ CTA FINAL ══════ -->
 <section id="cta-final" aria-labelledby="cta-final-title">
   <div class="cta-final-inner">
-    <p class="cta-final-sup reveal">No et quedis sense</p>
+    <p class="cta-final-sup reveal">Preestrena 26 juny · Reus</p>
     <h2 class="cta-final-title reveal delay-1" id="cta-final-title">
       Viu l'experiència
       <em>Gaudí</em>
     </h2>
     <p class="cta-final-sub reveal delay-2">
-      Un espectacle que no es repetirà. Porta la família i descobreix la màgia que va fer gran un nen de Reus.
+      Preestrena al Teatre Fortuny de Reus el 26 de juny. Temporada al Teatre Poliorama de Barcelona de novembre 2026 a gener 2027.
     </p>
-    <a href="https://entrades.exemple.cat"
+    <a href="https://www.teatrepoliorama.com"
        class="cta-final-btn reveal delay-3"
        id="cta-main"
        data-cta="cta_final"
        target="_blank"
        rel="noopener"
-       aria-label="Comprar entrades per Gaudí, el despertar del geni">
+       aria-label="Comprar entrades per Gaudí, el despertar del geni al Teatre Poliorama">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      Comprar entrades
+      Comprar entrades · Poliorama
     </a>
     <p class="cta-final-note reveal delay-4">
-      Teatre Victòria · Barcelona · Set–Des 2026 · Dissabtes i diumenges 12:00 h
+      Teatre Poliorama · Barcelona · Nov 2026 – Gen 2027
     </p>
   </div>
 </section>
@@ -1782,7 +1800,8 @@ footer{
       <a href="#musica">Música</a>
       <a href="#calendari">Dates</a>
       <a href="#patrocinadors">Patrocinadors</a>
-      <a href="mailto:info@trilope.cat">Contacte</a>
+      <a href="#premsa">Premsa</a>
+      <a href="mailto:alfredoruiz@casabatllo.cat">Contacte</a>
     </nav>
   </div>
   <div class="footer-bottom">
