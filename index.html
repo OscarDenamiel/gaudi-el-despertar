@@ -13,6 +13,8 @@
   <link rel="alternate" hreflang="es"        href="https://gaudieldespertardelgeni.cat/es/">
   <link rel="alternate" hreflang="en"        href="https://gaudieldespertardelgeni.cat/en/">
   <link rel="alternate" hreflang="x-default" href="https://gaudieldespertardelgeni.cat/">
+  <!-- Enllaç modificat per carregar Cormorant Garamond i Monsieur La Doulaise -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,450&family=Monsieur+La+Doulaise&family=Work+Sans:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
   <meta property="og:type"         content="website">
   <meta property="og:title"        content="Gaudí: El despertar del geni | Musical familiar · Barcelona 2026">
@@ -46,59 +48,57 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
-
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 <style>
 /* ─────────────────────────────────────────
    DESIGN TOKENS — Modernisme Musical
 ───────────────────────────────────────── */
 :root {
-  /* Superfícies */
-  --surface:           #fef8f5;
-  --surface-dim:       #ded9d6;
-  --surface-low:       #f8f2ef;
-  --surface-container: #f2ede9;
-  --surface-high:      #ede7e4;
-  --surface-highest:   #e7e1de;
+  /* Superfícies (Substituïm el to fred pel Blanc Pergamí del fons del logo) */
+  --surface:           #F4EFEA;  /* Fons general tipus paper/conte */
+  --surface-dim:       #E6DFD5;
+  --surface-low:       #EFEAE2;
+  --surface-container: #ECE5DC;
+  --surface-high:      #E4DBD0;
+  --surface-highest:   #DCD1C4;
   --white:             #ffffff;
 
-  /* Textos */
-  --on-surface:        #1d1b19;
-  --on-surface-var:    #45483a;
-  --inverse-surface:   #32302e;
-  --inverse-on-surface:#f5f0ec;
+  /* Textos (El negre pur passa al Marró Sepia profund de la jaqueta del nen) */
+  --on-surface:        #4A3525;  /* Tinta clàssica sepia */
+  --on-surface-var:    #634F3F;
+  --inverse-surface:   #302015;
+  --inverse-on-surface:#F4EFEA;
 
   /* Bordes */
-  --outline:           #767968;
-  --outline-var:       #c6c8b5;
+  --outline:           #8F7C6E;
+  --outline-var:       #D3C7BC;
 
-  /* Primary — verd forestal */
-  --primary:           #51630b;
-  --primary-container: #697c26;
+  /* Primary — El Verd Boix de la gorra del cartell */
+  --primary:           #5F6F4D;  /* Verd orgànic bosc */
+  --primary-container: #495738;
   --on-primary:        #ffffff;
-  --on-primary-cont:   #fcffe3;
-  --primary-fixed:     #d5ed88;
-  --primary-fixed-dim: #bad06f;
-  --brand-green:       #65772a;
+  --on-primary-cont:   #EAF2DE;
+  --brand-green:       #5F6F4D;  /* Aplicat als botons i detalls */
 
-  /* Secondary — ocre/terra */
-  --secondary:         #85531a;
-  --secondary-cont:    #fcb976;
+  /* Secondary — L'Ocre Argila de la llum del cartell */
+  --secondary:         #C29B6D;  /* Tocs càlids daurats antics */
+  --secondary-cont:    #E5CDAF;
   --on-secondary:      #ffffff;
-  --on-secondary-cont: #77470e;
+  --on-secondary-cont: #543E24;
 
-  /* Tertiary — marró càlid */
-  --tertiary:          #685a41;
-  --tertiary-cont:     #827358;
-  --on-tertiary:       #ffffff;
+  /* Dark Forest (Les seccions fosques com #espectacle o #musica passen a Sepia Fosc) */
+  --dark-forest:       #2A1D13;  /* Nit càlida en lloc de verd fosc corporatiu */
 
-  /* Dark */
-  --dark-forest:       #1a1c12;
-
-  /* Tipografies */
-  --f-display:  'Playfair Display', Georgia, serif;
+  /* Tipografies (Substituïm Playfair per les fonts de la teva proposta) */
+  --f-display:  'Cormorant Garamond', Georgia, serif; /* El geni adult */
   --f-body:     'Work Sans', system-ui, sans-serif;
   --f-label:    'Space Grotesk', system-ui, sans-serif;
+  --f-script:   'Monsieur La Doulaise', cursive;
 
   /* Radis */
   --r-sm:   0.25rem;
@@ -228,15 +228,22 @@ button { border: none; cursor: pointer; font: inherit; }
   border: 1px solid rgba(118,138,50,.3);
   border-radius: var(--r-full);
   background: rgba(118,138,50,.06);
-  color: var(--brand-green);
+  color: var(--on-secondary);
   font-family: var(--f-label);
   font-size: .75rem; font-weight: 600;
   letter-spacing: .2em; text-transform: uppercase;
 }
 .chip-light {
-  border-color: rgba(213,237,136,.25);
+  border-color: var(--secondary);
   background: rgba(213,237,136,.08);
-  color: var(--primary-fixed);
+  color: var(--secondary);
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .25rem 1rem;
+  border: 1px solid rgba(118,138,50,.3);
+  border-radius: var(--r-full);
+  font-family: var(--f-label);
+  font-size: .75rem; font-weight: 600;
+  letter-spacing: .2em; text-transform: uppercase;
 }
 
 /* ─────────────────────────────────────────
@@ -417,11 +424,15 @@ button { border: none; cursor: pointer; font: inherit; }
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  /* Placeholder — substitueix per: background-image: url('Gaudi_Cartell_Vertical.png'); */
-  background: linear-gradient(160deg,
-    #b89060 0%, #c8a87a 18%, #d4b888 32%,
-    #bfa070 48%, #a88050 62%, #c0a070 78%, #988050 100%);
-  background-size: cover; background-position: center top;
+  background-image: url('assets/img/hero-background.webp');
+  background-size: cover;
+  background-position: 65% center;
+}
+@media (max-width: 777px) {
+  .hero-bg {
+    background-image: url('assets/img/hero-background-mobile.webp');
+    background-size: cover;
+  }
 }
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
@@ -453,13 +464,44 @@ button { border: none; cursor: pointer; font: inherit; }
   font-family: var(--f-display);
   font-size: clamp(1.1rem, 3vw, 1.5rem);
   font-weight: 400; font-style: italic;
-  color: var(--primary-fixed);
+  color: var(--secondary);
   max-width: 540px;
   text-shadow: 0 2px 12px rgba(26,28,18,.4);
 }
 .hero-btns {
   display: flex; flex-direction: column; gap: .75rem;
   width: 100%; max-width: 480px;
+}
+.hero-brand-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.hero-text-primary{
+  display: block;
+  width: 100%;
+  /* Escala dinàmicament d'un mínim de 280px en mòbils fins a 780px de màxim en pantalles grans */
+  max-width: clamp(280px, 60vw, 500px); 
+  height: auto;
+  margin: 0 auto;
+  
+  /* Filtre d'ombra paral·lela suau perquè l'SVG destaqui i mantingui contrast sobre el fons clar/daurat del cartell */
+  filter: drop-shadow(0px 4px 20px rgba(42, 29, 19, 0.45));
+}
+.hero-text-secondary{
+  display: block;
+  width: 100%;
+  /* Escala dinàmicament d'un mínim de 280px en mòbils fins a 780px de màxim en pantalles grans */
+  max-width: clamp(280px, 60vw, 750px); 
+  height: auto;
+  margin: clamp(24px, 6vw, 40px) auto;
+  
+  /* Filtre d'ombra paral·lela suau perquè l'SVG destaqui i mantingui contrast sobre el fons clar/daurat del cartell */
+  filter: drop-shadow(0px 4px 20px rgba(42, 29, 19, 0.45));
 }
 @media (min-width: 480px) {
   .hero-btns { flex-direction: row; justify-content: center; }
@@ -470,7 +512,7 @@ button { border: none; cursor: pointer; font: inherit; }
   position: absolute; bottom: 1.5rem; left: 50%;
   transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 6px;
-  color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,.45);
   font-family: var(--f-label); font-size: .7rem;
   letter-spacing: .2em; text-transform: uppercase;
   animation: scrollcue 2.2s ease-in-out infinite; z-index: 3;
@@ -511,7 +553,7 @@ button { border: none; cursor: pointer; font: inherit; }
   font-family: var(--f-body);
   font-size: .875rem; font-weight: 300;
   font-style: italic;
-  color: rgba(222,217,214,.5);
+  color: rgba(255,255,255,.45);
   flex-shrink: 0;
 }
 .trust-dot {
@@ -526,11 +568,11 @@ button { border: none; cursor: pointer; font: inherit; }
 
 /* Organic section divider */
 .wave-down {
-  height: 80px; overflow: hidden; margin-top: -1px;
+  overflow: hidden; margin-top: -1px;
 }
 .wave-down svg { display: block; }
 .wave-up {
-  height: 80px; overflow: hidden; margin-bottom: -1px;
+  overflow: hidden; margin-bottom: -1px;
 }
 .wave-up svg { display: block; }
 
@@ -613,12 +655,12 @@ button { border: none; cursor: pointer; font: inherit; }
   font-family: var(--f-label);
   font-size: .7rem; font-weight: 600;
   letter-spacing: .18em; text-transform: uppercase;
-  color: var(--primary-fixed-dim);
+  color: var(--secondary);
   margin-bottom: .35rem;
 }
 .meta-value {
   font-family: var(--f-display);
-  font-size: 1rem; font-weight: 500;
+  font-size: 1.35rem; font-weight: 500; font-style: italic;
   color: white;
 }
 .visual-poster {
@@ -788,7 +830,7 @@ button { border: none; cursor: pointer; font: inherit; }
   font-family: var(--f-label);
   font-size: .8rem; font-weight: 600;
   letter-spacing: .06em; text-transform: uppercase;
-  color: var(--primary-fixed);
+  color: var(--secondary);
   margin-bottom: .3rem;
 }
 .feat-desc {
@@ -1022,7 +1064,7 @@ footer {
   font-family: var(--f-label);
   font-size: .7rem; font-weight: 600;
   letter-spacing: .2em; text-transform: uppercase;
-  color: var(--primary-fixed); margin-bottom: 1.25rem;
+  color: var(--secondary); margin-bottom: 1.25rem;
 }
 .footer-nav-links { display: flex; flex-direction: column; gap: .75rem; }
 .footer-nav-links a {
@@ -1035,7 +1077,7 @@ footer {
   font-family: var(--f-label);
   font-size: .7rem; font-weight: 600;
   letter-spacing: .2em; text-transform: uppercase;
-  color: var(--outline-var); margin-bottom: 1.25rem;
+  color: var(--secondary); margin-bottom: 1.25rem;
 }
 .footer-sponsor-chip {
   height: 44px; padding: 0 1rem;
@@ -1077,7 +1119,7 @@ footer {
 
     <ul class="nav-links" role="list">
       <li><a href="#espectacle" data-nav="sinopsis">L'Espectacle</a></li>
-      <li><a href="#personatges" data-nav="personatges">Personatges</a></li>
+      <li><a href="#ficha" data-nav="personatges">Fitxa tècnica</a></li>
       <li><a href="#musica" data-nav="musica">Música</a></li>
       <li><a href="#dates" data-nav="calendari">Dates</a></li>
       <li><a href="#premsa" data-nav="premsa">Premsa</a></li>
@@ -1129,11 +1171,12 @@ footer {
 
   <div class="hero-content">
     <div class="reveal">
-      <span class="chip-light">Casa Batlló Presenta · Any Gaudí 2026</span>
+      <span class="chip">Casa Batlló Presenta · Any Gaudí 2026</span>
     </div>
 
-    <h1 class="hero-title reveal d1">
-      Gaudí: <br> El despertar del geni
+    <h1 class="hero-brand-title reveal d1">
+      <img class="hero-text-primary" src="assets/img/gaudi.svg" alt="Gaudí">
+      <img class="hero-text-secondary" src="assets/img/text.svg" alt="El despertar del geni">
     </h1>
 
     <p class="hero-subtitle reveal d2">
@@ -1244,7 +1287,7 @@ footer {
       </div>
 
       <div class="visual-poster reveal d2">
-        <!-- Substitueix per: <img src="Gaudi_Cartell_Vertical.png" alt="Cartell" style="width:100%;height:100%;object-fit:cover;"> -->
+        <img src="assets/img/img-featured.webp" alt="Cartell" style="width:100%;height:100%;object-fit:cover;">
         <div class="visual-poster-quote">
           <p class="t-headline-md italic" style="color:white;">
             "Com neix<br>la genialitat?"
@@ -1257,93 +1300,18 @@ footer {
 </section>
 
 <!-- Wave transition -->
-<div class="wave-down" style="background:var(--surface);">
-  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:80px;display:block;">
-    <path d="M0 0 C360 80 1080 80 1440 0 L1440 80 L0 80 Z" fill="var(--dark-forest)"/>
+<div class="wave-down" style="background:var(--dark-forest);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height: clamp(24px, 80px);display:block;">
+    <path d="M0 0 C360 80 1080 80 1440 0 L1440 80 L0 80 Z" fill="var(--surface-container)"/>
   </svg>
 </div>
 
-<!-- ══ PERSONATGES ══ -->
-<section id="personatges" class="section" aria-labelledby="personatges-title">
-  <div class="container">
-    <div class="reveal" style="margin-bottom:.75rem;">
-      <span class="chip">Els protagonistes</span>
-    </div>
-    <h2 class="t-headline-lg reveal d1" id="personatges-title"
-        style="margin-bottom:2.5rem;">
-      Personatges
-    </h2>
-
-    <div class="chars-grid reveal d2" role="list">
-
-      <article class="char-card" role="listitem">
-        <div class="char-img char-img-1" data-emoji="👦"></div>
-        <div class="char-info">
-          <p class="char-role">Protagonista · Estel Aparicio</p>
-          <h3 class="char-name">Anton Gaudí</h3>
-          <p class="char-desc">Un nen marcat per la malaltia que aprèn a veure la natura com ningú i a transformar el dolor en bellesa.</p>
-        </div>
-      </article>
-
-      <article class="char-card" role="listitem">
-        <div class="char-img char-img-2" data-emoji="🎙️"></div>
-        <div class="char-info">
-          <p class="char-role">Veu en off · Lluís Soler</p>
-          <h3 class="char-name">Antoni Gaudí</h3>
-          <p class="char-desc">La veu del geni adult que guia el viatge als seus propis orígens i a la seva infantesa a Reus.</p>
-        </div>
-      </article>
-
-      <article class="char-card" role="listitem">
-        <div class="char-img char-img-3" data-emoji="👨"></div>
-        <div class="char-info">
-          <p class="char-role">El pare · Andreu Domènech</p>
-          <h3 class="char-name">Francesc Gaudí</h3>
-          <p class="char-desc">Calderoner de Riudoms. L'ofici manual i la sensibilitat familiar que desperta el talent del fill.</p>
-        </div>
-      </article>
-
-      <article class="char-card" role="listitem">
-        <div class="char-img char-img-4" data-emoji="👩"></div>
-        <div class="char-info">
-          <p class="char-role">La mare · Irene Jòdar</p>
-          <h3 class="char-name">Antònia Cornet</h3>
-          <p class="char-desc">Amor incondicional i fortalesa. El pilar emocional que sosté la família Gaudí.</p>
-        </div>
-      </article>
-
-      <article class="char-card" role="listitem">
-        <div class="char-img char-img-5" data-emoji="👨‍🏫"></div>
-        <div class="char-info">
-          <p class="char-role">El mestre · Albert Triola</p>
-          <h3 class="char-name">Pare Llanes</h3>
-          <p class="char-desc">El professor que descobreix el talent extraordinari del nen i l'encamina cap al seu destí.</p>
-        </div>
-      </article>
-
-      <article class="char-card" role="listitem">
-        <div class="char-img char-img-6" data-emoji="👥"></div>
-        <div class="char-info">
-          <p class="char-role">Els amics · Núria Masip i Natalia Revilla</p>
-          <h3 class="char-name">Eduard Toda & Josep Ribera</h3>
-          <p class="char-desc">Els companys inseparables que acompanyen el jove Antoni en el seu despertar creatiu.</p>
-        </div>
-      </article>
-
-    </div>
-
-    <p class="drag-hint reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
-      Llisca per veure tots els personatges
-    </p>
-  </div>
-</section>
 
 <!-- ══ FITXA TÈCNICA ══ -->
 <section id="ficha" class="section" aria-labelledby="ficha-title">
   <div class="container">
     <div class="reveal" style="margin-bottom:.75rem;">
-      <span class="chip">Producció</span>
+      <span class="chip-light">Producció</span>
     </div>
     <h2 class="t-headline-lg reveal d1" id="ficha-title" style="margin-bottom:2.5rem;">
       Fitxa tècnica
@@ -1385,10 +1353,10 @@ footer {
   </div>
 </section>
 
-<!-- Wave -->
-<div class="wave-up" style="background:var(--surface-container);">
-  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:80px;display:block;">
-    <path d="M0 80 C360 0 1080 0 1440 80 L1440 0 L0 0 Z" fill="var(--dark-forest)"/>
+<!-- Wave transition -->
+<div class="wave-down" style="background:var(--dark-forest);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height: clamp(24px, 80px);display:block;transform: rotate(180deg);">
+    <path d="M0 0 C360 80 1080 80 1440 0 L1440 80 L0 80 Z" fill="var(--surface-container)"/>
   </svg>
 </div>
 
@@ -1451,10 +1419,10 @@ footer {
   </div>
 </section>
 
-<!-- Wave -->
-<div class="wave-down" style="background:var(--surface);">
-  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:80px;display:block;">
-    <path d="M0 0 C360 80 1080 80 1440 0 L1440 80 L0 80 Z" fill="var(--dark-forest)"/>
+<!-- Wave transition -->
+<div class="wave-down" style="background:var(--dark-forest);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height: clamp(24px, 80px);display:block;">
+    <path d="M0 0 C360 80 1080 80 1440 0 L1440 80 L0 80 Z" fill="var(--surface)"/>
   </svg>
 </div>
 
@@ -1463,7 +1431,7 @@ footer {
   <div class="container">
     <div style="text-align:center;max-width:560px;margin-inline:auto;margin-bottom:1rem;">
       <div class="reveal" style="margin-bottom:.75rem;display:flex;justify-content:center;">
-        <span class="chip">Quan i on</span>
+        <span class="chip-light">Quan i on</span>
       </div>
       <h2 class="t-headline-lg reveal d1" id="dates-title">
         Reserva la teva data
@@ -1507,7 +1475,7 @@ footer {
 <section id="patrocinadors" class="section" aria-labelledby="patrocinadors-title">
   <div class="container">
     <div class="reveal" style="margin-bottom:.75rem;">
-      <span class="chip">Gràcies a</span>
+      <span class="chip-light">Gràcies a</span>
     </div>
     <h2 class="t-headline-lg reveal d1" id="patrocinadors-title" style="margin-bottom:.75rem;">
       Patrocinadors &amp; col·laboradors
@@ -1605,15 +1573,15 @@ footer {
     </div>
 
     <div class="premsa-contact reveal d3">
-      <p class="t-label-md" style="color:var(--primary-fixed);margin-bottom:.75rem;letter-spacing:.15em;text-transform:uppercase;">Contacte de premsa</p>
+      <p class="t-label-md" style="color:var(--secondary);margin-bottom:.75rem;letter-spacing:.15em;text-transform:uppercase;">Contacte de premsa</p>
       <p style="font-family:var(--f-display);font-style:italic;font-size:1.1rem;color:white;margin-bottom:.5rem;">Alfredo Ruiz</p>
       <div style="display:flex;flex-direction:column;gap:.35rem;">
         <a href="mailto:alfredoruiz@casabatllo.cat"
-           style="color:var(--primary-fixed-dim);font-size:.9375rem;transition:color .2s;">
+           style="color:var(--secondary);font-size:.9375rem;transition:color .2s;">
           alfredoruiz@casabatllo.cat
         </a>
         <a href="tel:+34656898432"
-           style="color:var(--primary-fixed-dim);font-size:.9375rem;transition:color .2s;">
+           style="color:var(--secondary);font-size:.9375rem;transition:color .2s;">
           656 898 432
         </a>
       </div>
@@ -1626,7 +1594,7 @@ footer {
   <div class="cta-blob"></div>
   <div class="cta-inner">
     <div class="reveal" style="margin-bottom:1.25rem;display:flex;justify-content:center;">
-      <span class="chip">Preestrena 26 juny · Reus</span>
+      <span class="chip-light">Preestrena 26 juny · Reus</span>
     </div>
     <h2 class="t-display italic reveal d1" id="cta-title" style="margin-bottom:.5em;">
       Viu l'experiència Gaudí
@@ -1668,7 +1636,6 @@ footer {
         <p class="footer-nav-title">Navegació</p>
         <nav class="footer-nav-links" aria-label="Navegació peu de pàgina">
           <a href="#espectacle">L'Espectacle</a>
-          <a href="#personatges">Personatges</a>
           <a href="#ficha">Fitxa tècnica</a>
           <a href="#musica">Música</a>
           <a href="#dates">Dates</a>
