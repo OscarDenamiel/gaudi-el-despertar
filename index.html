@@ -806,6 +806,109 @@ button { border: none; cursor: pointer; font: inherit; }
 .badge.green { background: var(--brand-green); color: white; }
 
 /* ─────────────────────────────────────────
+   GALERIA
+───────────────────────────────────────── */
+#galeria { background: var(--surface-container); overflow: hidden; }
+
+/* ── MOSAIC DESKTOP ── */
+.galeria-mosaic {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 280px);
+  gap: 6px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.galeria-mosaic .g-item {
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--r);
+  background: var(--surface-highest);
+}
+.galeria-mosaic .g-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s var(--ease);
+  display: block;
+}
+.galeria-mosaic .g-item:hover img { transform: scale(1.05); }
+.galeria-mosaic .g-item.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+@media (min-width: 900px) {
+  .galeria-mosaic { display: grid; }
+  .galeria-carousel { display: none !important; }
+}
+
+/* ── CAROUSEL MOBILE / TABLET ── */
+.galeria-carousel { position: relative; }
+.galeria-track-wrap {
+  overflow: hidden;
+  border-radius: var(--r-lg);
+}
+.galeria-track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.galeria-track::-webkit-scrollbar { display: none; }
+.galeria-track .g-slide {
+  flex: 0 0 calc(100% - 40px);
+  scroll-snap-align: center;
+  aspect-ratio: 4/5;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--surface-highest);
+}
+@media (min-width: 520px) {
+  .galeria-track .g-slide { flex: 0 0 calc(60% - 24px); }
+}
+.galeria-track .g-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* Dots */
+.galeria-dots {
+  display: flex; justify-content: center; gap: 6px;
+  margin-top: 1.25rem;
+}
+.galeria-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--outline-var);
+  border: none; padding: 0; cursor: pointer;
+  transition: background .25s, transform .25s;
+}
+.galeria-dot.active {
+  background: var(--brand-green);
+  transform: scale(1.4);
+}
+
+/* Botons nav */
+.galeria-nav {
+  display: none;
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--outline-var);
+  border-radius: var(--r-full);
+  width: 40px; height: 40px;
+  align-items: center; justify-content: center;
+  cursor: pointer; z-index: 2;
+  transition: background .2s;
+  font-size: 1rem; color: var(--on-surface);
+}
+.galeria-nav:hover { background: white; }
+.galeria-nav.prev { left: -8px; }
+.galeria-nav.next { right: -8px; }
+@media (min-width: 520px) { .galeria-nav { display: flex; } }
+
+/* ─────────────────────────────────────────
    MÚSICA (dark)
 ───────────────────────────────────────── */
 #musica { background: var(--dark-forest); position: relative; overflow: hidden; }
@@ -1306,6 +1409,107 @@ footer {
   </svg>
 </div>
 
+<!-- ══ GALERIA ══ -->
+<section id="galeria" class="section" aria-labelledby="galeria-title">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:.75rem;">
+      <span class="chip-light">Fotografies · David Ruano</span>
+    </div>
+    <h2 class="t-headline-lg reveal d1" id="galeria-title" style="margin-bottom:2rem;">
+      L'espectacle en imatges
+    </h2>
+ 
+    <!-- ── MOSAIC DESKTOP (≥900px) ── -->
+    <div class="galeria-mosaic reveal d2" role="list" aria-label="Galeria de fotos de l'espectacle">
+      <!-- Foto gran: 2×2 -->
+      <div class="g-item big" role="listitem">
+        <img src="assets/img/gallery/foto-01.webp" alt="Escena de l'espectacle Gaudí El despertar del geni" loading="lazy">
+      </div>
+      <!-- Fila dreta: 2 columnes × 2 files -->
+      <div class="g-item" role="listitem">
+        <img src="assets/img/gallery/foto-02.webp" alt="Personatges de l'obra" loading="lazy">
+      </div>
+      <div class="g-item" role="listitem">
+        <img src="assets/img/gallery/foto-03.webp" alt="Escenografia immersiva" loading="lazy">
+      </div>
+      <div class="g-item" role="listitem">
+        <img src="assets/img/gallery/foto-04.webp" alt="El jove Gaudí en escena" loading="lazy">
+      </div>
+      <div class="g-item" role="listitem">
+        <img src="assets/img/gallery/foto-05.webp" alt="Moment musical de l'obra" loading="lazy">
+      </div>
+      <!-- Segona fila completa -->
+      <div class="g-item" role="listitem">
+        <img src="assets/img/gallery/foto-06.webp" alt="Artistes en escena" loading="lazy">
+      </div>
+      <div class="g-item" role="listitem">
+        <img src="assets/img/gallery/foto-07.webp" alt="Llums i escenografia" loading="lazy">
+      </div>
+      <div class="g-item" role="listitem">
+        <img src="assets/img/gallery/foto-08.webp" alt="Escena coral del musical" loading="lazy">
+      </div>
+      <div class="g-item" role="listitem">
+        <img src="assets/img/gallery/foto-09.webp" alt="Escena coral del musical" loading="lazy">
+      </div>
+    </div>
+ 
+    <!-- ── CAROUSEL MOBILE / TABLET (<900px) ── -->
+    <div class="galeria-carousel reveal d2" aria-label="Galeria de fotos de l'espectacle">
+      <button class="galeria-nav prev" id="galPrev" aria-label="Foto anterior">←</button>
+      <button class="galeria-nav next" id="galNext" aria-label="Foto següent">→</button>
+ 
+      <div class="galeria-track-wrap">
+        <div class="galeria-track" id="galTrack">
+          <div class="g-slide">
+            <img src="assets/img/gallery/foto-01.webp" alt="Escena de l'espectacle" loading="lazy">
+          </div>
+          <div class="g-slide">
+            <img src="assets/img/gallery/foto-02.webp" alt="Personatges de l'obra" loading="lazy">
+          </div>
+          <div class="g-slide">
+            <img src="assets/img/gallery/foto-03.webp" alt="Escenografia immersiva" loading="lazy">
+          </div>
+          <div class="g-slide">
+            <img src="assets/img/gallery/foto-04.webp" alt="El jove Gaudí en escena" loading="lazy">
+          </div>
+          <div class="g-slide">
+            <img src="assets/img/gallery/foto-05.webp" alt="Moment musical" loading="lazy">
+          </div>
+          <div class="g-slide">
+            <img src="assets/img/gallery/foto-06.webp" alt="Artistes en escena" loading="lazy">
+          </div>
+          <div class="g-slide">
+            <img src="assets/img/gallery/foto-07.webp" alt="Llums i escenografia" loading="lazy">
+          </div>
+          <div class="g-slide">
+            <img src="assets/img/gallery/foto-08.webp" alt="Escena coral" loading="lazy">
+          </div>
+          <div class="g-slide">
+            <img src="assets/img/gallery/foto-09.webp" alt="Foto de l'espectacle" loading="lazy">
+          </div>
+          <div class="g-slide">
+            <img src="assets/img/gallery/foto-10.webp" alt="Foto de l'espectacle" loading="lazy">
+          </div>
+        </div>
+      </div>
+ 
+      <div class="galeria-dots" id="galDots" aria-hidden="true">
+        <button class="galeria-dot active"></button>
+        <button class="galeria-dot"></button>
+        <button class="galeria-dot"></button>
+        <button class="galeria-dot"></button>
+        <button class="galeria-dot"></button>
+        <button class="galeria-dot"></button>
+        <button class="galeria-dot"></button>
+        <button class="galeria-dot"></button>
+        <button class="galeria-dot"></button>
+        <button class="galeria-dot"></button>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+
 
 <!-- ══ FITXA TÈCNICA ══ -->
 <section id="ficha" class="section" aria-labelledby="ficha-title">
@@ -1753,6 +1957,43 @@ footer {
   [30,60,120,300].forEach(s => {
     setTimeout(() => ga('time_on_page',{event_category:'Engagement',seconds_on_page:s,event_label:s+'s'}), s*1000);
   });
+
+  /* ── Galeria carousel ── */
+const track   = document.getElementById('galTrack');
+const dots    = document.querySelectorAll('.galeria-dot');
+const btnPrev = document.getElementById('galPrev');
+const btnNext = document.getElementById('galNext');
+
+if(track){
+  let current = 0;
+  const slides = track.querySelectorAll('.g-slide');
+  const total  = slides.length;
+
+  function goTo(idx){
+    current = (idx + total) % total;
+    const slideW = slides[0].offsetWidth + 12; // 12px = gap
+    track.scrollTo({ left: current * slideW, behavior: 'smooth' });
+    dots.forEach((d,i) => d.classList.toggle('active', i === current));
+  }
+
+  // Sync dots en scroll manual
+  let scrollTimer;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      const slideW = slides[0].offsetWidth + 12;
+      current = Math.min(Math.round(track.scrollLeft / slideW), total - 1);
+      dots.forEach((d,i) => d.classList.toggle('active', i === current));
+    }, 80);
+  }, {passive:true});
+
+  // Dots
+  dots.forEach((d,i) => d.addEventListener('click', () => goTo(i)));
+
+  // Botons nav
+  if(btnPrev) btnPrev.addEventListener('click', () => goTo(current - 1));
+  if(btnNext) btnNext.addEventListener('click', () => goTo(current + 1));
+}
 
 })();
 </script>
