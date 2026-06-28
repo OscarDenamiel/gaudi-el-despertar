@@ -1114,6 +1114,42 @@ footer {
 .footer-dot {
   width: 8px; height: 8px; border-radius: 50%;
 }
+/* ─────────────────────────────────────────
+   GRUPS & ESCOLES
+───────────────────────────────────────── */
+#grups { background: var(--dark-forest); position: relative; overflow: hidden; }
+.grups-grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: 1rem; margin-top: 2.5rem;
+}
+@media (min-width: 640px) {
+  .grups-grid { grid-template-columns: 1fr 1fr; }
+}
+.grup-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-xl);
+  padding: 2rem;
+  transition: background .2s, border-color .2s;
+}
+.grup-card:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.2);
+}
+.grup-card-icon {
+  font-size: 2rem; margin-bottom: 1rem;
+}
+.grup-card-title {
+  font-family: var(--f-display);
+  font-size: 1.35rem; font-weight: 600;
+  color: white; margin-bottom: .75rem;
+}
+.grup-card-desc {
+  font-size: .9375rem; font-weight: 300;
+  color: var(--surface-dim); line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
 </style>
 </head>
 
@@ -1128,6 +1164,7 @@ footer {
     <ul class="nav-links" role="list">
       <li><a href="#espectacle" data-nav="sinopsis">L'Espectacle</a></li>
       <li><a href="#musica" data-nav="musica">Música</a></li>
+      <li><a href="#grups" data-nav="grups">Grups & Escoles</a></li>
       <li><a href="#premsa" data-nav="premsa">Premsa</a></li>
     </ul>
 
@@ -1152,6 +1189,7 @@ footer {
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú">
   <a href="#espectacle"   data-nav="sinopsis_mob">L'Espectacle</a>
   <a href="#musica"       data-nav="musica_mob">Música</a>
+  <a href="#grups" data-nav="grups_mob">Grups & Escoles</a>
   <a href="#premsa"       data-nav="premsa_mob">Premsa</a>
   <a href="https://www.teatrepoliorama.com/ca/programacio/c/911-gaudi-el-despertar-del-geni.html"
      class="mm-cta" data-cta="nav_mobile"
@@ -1470,6 +1508,51 @@ footer {
   </div>
 </section>
 
+<!-- ══ GRUPS & ESCOLES ══ -->
+<section id="grups" class="section" aria-labelledby="grups-title">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="reveal" style="margin-bottom:.75rem;">
+      <span class="chip-light">Vingues en grup</span>
+    </div>
+    <h2 class="t-headline-lg reveal d1" id="grups-title" style="color:white;margin-bottom:.5rem;">
+      Grups i escoles
+    </h2>
+    <p class="reveal d2" style="font-size:.9375rem;color:var(--surface-dim);max-width:520px;margin-bottom:.5rem;">
+      Tarifes especials per a grups i programació escolar. Una experiència cultural única per a totes les edats.
+    </p>
+
+    <div class="grups-grid">
+
+      <div class="grup-card reveal d2">
+        <div class="grup-card-icon">🎟️</div>
+        <h3 class="grup-card-title">Grups amb descompte</h3>
+        <p class="grup-card-desc">Vine amb el teu grup i gaudeix de preus especials. Ideal per a associacions, empreses, famílies nombroses i col·lectius. Consulta disponibilitat i tarifes a Top Grups.</p>
+        <a href="https://www.topgrups.com/ca/programacio/c/1757-gaudi-el-despertar-del-geni.html"
+           class="btn-ghost-light"
+           target="_blank" rel="noopener"
+           style="width:fit-content;"
+           data-cta="grups">
+          Reserves de grup →
+        </a>
+      </div>
+
+      <div class="grup-card reveal d3">
+        <div class="grup-card-icon">🏫</div>
+        <h3 class="grup-card-title">Funcions escolars</h3>
+        <p class="grup-card-desc">Sessions matinals adaptades per a grups escolars de primària i secundària. Un recurs educatiu i cultural sobre la figura de Gaudí i el patrimoni català. Consulta la fitxa a Espectacles amb Classe.</p>
+        <a href="https://www.topgrups.com/ca/programacio/c/espectacles-amb-classe-24.html"
+           class="btn-ghost-light"
+           target="_blank" rel="noopener"
+           style="width:fit-content;"
+           data-cta="escoles">
+          Informació escolar →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- Wave transition -->
 <div class="wave-down" style="background:var(--dark-forest);">
   <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height: clamp(24px, 80px);display:block;">
@@ -1518,21 +1601,31 @@ footer {
     </div>
 
     <div style="display:flex;flex-direction:column;gap:.75rem;" class="reveal d2">
-      <a href="#" class="premsa-download" aria-label="Descarregar dossier de premsa">
+      <a href="assets/docs/nota-premsa-CAT.pdf" 
+   class="premsa-download"
+   download="nota-premsa-CAT.pdf"
+   aria-label="Descarregar nota de premsa">
         <div style="display:flex;align-items:center;gap:1rem;">
           <div class="premsa-icon green">📄</div>
           <span class="t-label-md" style="color:white;">Nota de Premsa (PDF)</span>
         </div>
         <span class="premsa-arrow">↓</span>
       </a>
-      <a href="#" class="premsa-download" aria-label="Descarregar dossier de premsa">
+      <a href="assets/docs/Dossier_Gaudi-el-despertar-del-geni.pdf" 
+      class="premsa-download"
+      download="Dossier_Gaudi-el-despertar-del-geni.pdf"
+      aria-label="Descarregar dossier de l'espectacle">
         <div style="display:flex;align-items:center;gap:1rem;">
           <div class="premsa-icon green">🗂️</div>
           <span class="t-label-md" style="color:white;">Dossier de l'espectacle</span>
         </div>
         <span class="premsa-arrow">↓</span>
       </a>
-      <a href="#" class="premsa-download" aria-label="Descarregar galeria d'imatges">
+      <a href="https://casabatllo-my.sharepoint.com/personal/mediakit_casabatllo_cat/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fmediakit%5Fcasabatllo%5Fcat%2FDocuments%2FMusical%20Gaud%C3%AD%20%2D%20El%20despertar%20del%20geni%2FSelecci%C3%B3%20imatges%20obra%2F1%2E%20Selecci%C3%B3%20principal&ga=1"
+   class="premsa-download"
+   target="_blank"
+   rel="noopener"
+   aria-label="Veure galeria d'imatges HD">
         <div style="display:flex;align-items:center;gap:1rem;">
           <div class="premsa-icon amber">📸</div>
           <span class="t-label-md" style="color:white;">Galeria d'imatges HD · David Ruano</span>
