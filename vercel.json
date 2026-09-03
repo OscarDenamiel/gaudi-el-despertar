@@ -3,7 +3,13 @@
     { "source": "/es", "destination": "/es/index.html" },
     { "source": "/es/", "destination": "/es/index.html" },
     { "source": "/en", "destination": "/en/index.html" },
-    { "source": "/en/", "destination": "/en/index.html" }
+    { "source": "/en/", "destination": "/en/index.html" },
+    { "source": "/premsa", "destination": "/premsa/index.html" },
+    { "source": "/premsa/", "destination": "/premsa/index.html" },
+    { "source": "/premsa/es", "destination": "/premsa/es/index.html" },
+    { "source": "/premsa/es/", "destination": "/premsa/es/index.html" },
+    { "source": "/premsa/en", "destination": "/premsa/en/index.html" },
+    { "source": "/premsa/en/", "destination": "/premsa/en/index.html" }
   ],
   "headers": [
     {
