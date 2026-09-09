@@ -416,120 +416,167 @@ button { border: none; cursor: pointer; font: inherit; }
 
 /* ─────────────────────────────────────────
    HERO
+   Mobile/tablet: nen a 100% d'alçada alineat a la dreta (retallat),
+   contingut centrat a la part baixa sobre scrim.
+   Desktop (≥900px): composició del cartell — text a l'esquerra,
+   nen sencer a la dreta.
 ───────────────────────────────────────── */
 #hero {
   position: relative;
   min-height: 100svh; min-height: 100vh;
   display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
+  align-items: center; justify-content: flex-end;
   overflow: hidden;
-  padding-top: 80px;
-  padding-inline: var(--mx-mob);
+  --nav-h: 66px; /* alçada real del nav fix (logo 48px + padding) */
+  padding-top: var(--nav-h);
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background-image: url('../assets/img/hero-background.webp');
+  background-image: url('../assets/img/bg.jpg');
   background-size: cover;
-  background-position: 65% center;
+  background-position: 60% center;
 }
-@media (max-width: 777px) {
-  .hero-bg {
-    background-image: url('../assets/img/hero-background-mobile.webp');
-    background-size: cover;
-    background-position: 95% center;
-  }
-}
+/* Scrim: fosc a baix per llegibilitat, net a dalt (cara del nen) */
 .hero-overlay {
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(to top,
-    rgba(26,28,18,.95) 0%,
-    rgba(26,28,18,.5) 40%,
-    rgba(26,28,18,.1) 70%,
-    rgba(254,248,245,.1) 100%);
+  position: absolute; inset: 0; z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(20,12,6,.84) 0%,
+    rgba(20,12,6,.68) 26%,
+    rgba(20,12,6,.3)  52%,
+    rgba(20,12,6,0)   78%
+  );
 }
+/* Nen — sempre ancorat a la dreta, alçada plena */
+.hero-nen {
+  position: absolute;
+  bottom: 0; right: 0;
+  z-index: 2;
+  height: calc(100% - var(--nav-h)); /* arrenca just sota el nav */
+  width: auto;
+  max-width: none;
+  transform: translateX(45%); /* retall a la dreta */
+  transform-origin: bottom right;
+  pointer-events: none;
+  user-select: none;
+}
+@media (min-width: 600px) {
+  .hero-nen { transform: translateX(35%); }
+}
+/* Contingut */
 .hero-content {
-  position: relative; z-index: 2;
-  text-align: center;
-  max-width: 1100px; width: 100%;
-  margin-inline: auto;
-  display: flex; flex-direction: column;
-  align-items: center; gap: 1.5rem;
-  padding-bottom: 2rem;
-}
-.hero-title {
-  font-family: var(--f-display);
-  font-size: clamp(3.5rem, 14vw, 7rem);
-  font-weight: 700;
-  line-height: .95;
-  color: white;
-  letter-spacing: -.02em;
-  text-shadow: 0 4px 32px rgba(26,28,18,.5);
-}
-.hero-subtitle {
-  font-family: var(--f-display);
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
-  font-weight: 400; font-style: italic;
-  color: var(--secondary);
-  max-width: 540px;
-  text-shadow: 0 2px 12px rgba(26,28,18,.4);
-}
-.hero-btns {
-  display: flex; flex-direction: column; gap: .75rem;
-  width: 100%; max-width: 480px;
-}
-.hero-brand-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative; z-index: 4;
   width: 100%;
   max-width: var(--container);
-  margin: 0 auto;
+  margin-inline: auto;
+  padding: 0 var(--mx-mob) clamp(1.75rem, 5vh, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(.6rem, 1.8vh, 1.1rem);
 }
-.hero-text-primary{
+/* CB Presenta */
+.hero-cb-presenta {
+  height: clamp(40px, 5vw, 48px);
+  width: auto;
+  opacity: .95;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.35));
+}
+/* Logo principal */
+.hero-logo-obra {
   display: block;
-  width: 100%;
-  /* Escala dinàmicament d'un mínim de 280px en mòbils fins a 780px de màxim en pantalles grans */
-  max-width: clamp(600px, 60vw, 1000px); 
+  width: min(100%, 460px);
   height: auto;
-  margin: 0 auto;
-  
-  /* Filtre d'ombra paral·lela suau perquè l'SVG destaqui i mantingui contrast sobre el fons clar/daurat del cartell */
-  filter: drop-shadow(0px 4px 20px rgba(42, 29, 19, 0.45));
+  filter: drop-shadow(0 4px 24px rgba(20,12,6,.55));
 }
-.hero-text-secondary{
+/* Text cartell */
+.hero-text-cartell {
   display: block;
-  width: 100%;
-  /* Escala dinàmicament d'un mínim de 280px en mòbils fins a 780px de màxim en pantalles grans */
-  max-width: clamp(280px, 60vw, 750px); 
+  width: min(100%, 400px);
   height: auto;
-  margin: clamp(24px, 6vw, 40px) auto;
-  
-  /* Filtre d'ombra paral·lela suau perquè l'SVG destaqui i mantingui contrast sobre el fons clar/daurat del cartell */
-  filter: drop-shadow(0px 4px 20px rgba(42, 29, 19, 0.45));
+  filter: drop-shadow(0 2px 12px rgba(20,12,6,.5));
+  margin-top: -.25rem;
 }
-@media (min-width: 480px) {
-  .hero-btns { flex-direction: row; justify-content: center; }
+/* Botons — label sempre centrat */
+.hero-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  width: 100%;
+  max-width: 420px;
+  margin-top: .5rem;
+}
+.hero-btns .btn-primary,
+.hero-btns .btn-ghost-light {
+  width: 100%;
+  justify-content: center;
+  padding-block: 1rem;
+}
+
+/* ── Tablet: escalem el bloc de text perquè no quedi petit ── */
+@media (min-width: 600px) and (max-width: 899px) {
+  .hero-logo-obra    { width: min(70vw, 560px); }
+  .hero-text-cartell { width: min(62vw, 490px); }
+  .hero-btns         { max-width: 460px; }
+}
+
+/* ── Desktop: composició del cartell ── */
+@media (min-width: 900px) {
+  #hero {
+    justify-content: center;
+    --nav-h: 72px;
+  }
+  .hero-bg { background-position: center center; }
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(20,12,6,.62) 0%,
+      rgba(20,12,6,.4)  38%,
+      rgba(20,12,6,.12) 66%,
+      rgba(20,12,6,0)   88%
+    );
+  }
+  .hero-nen {
+    height: calc(100% - var(--nav-h));
+    object-fit: contain;
+    object-position: bottom right;
+    transform: translateX(20%);
+    right: calc(max(0px, (100% - var(--container))) / 2 + var(--mx-desk));
+  }
+  .hero-content {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 var(--mx-desk);
+    gap: clamp(.75rem, 1.6vh, 1.4rem);
+  }
+  .hero-logo-obra   { width: min(50vw, 620px); }
+  .hero-text-cartell{ width: min(39vw, 545px); }
+  .hero-btns {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: auto;
+    max-width: none;
+    gap: 1rem;
+  }
   .hero-btns .btn-primary,
-  .hero-btns .btn-ghost-light { flex: 0 0 auto; }
+  .hero-btns .btn-ghost-light {
+    width: auto;
+    min-width: 280px;
+  }
 }
-.hero-scroll {
-  position: absolute; bottom: 1.5rem; left: 50%;
-  transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  color: rgba(255,255,255,.45);
-  font-family: var(--f-label); font-size: .7rem;
-  letter-spacing: .2em; text-transform: uppercase;
-  animation: scrollcue 2.2s ease-in-out infinite; z-index: 3;
-}
-.hero-scroll::after {
-  content: ''; display: block;
-  width: 1px; height: 32px;
-  background: linear-gradient(to bottom, rgba(255,255,255,.3), transparent);
-}
-@keyframes scrollcue {
-  0%,100% { transform: translateX(-50%) translateY(0); }
-  50%      { transform: translateX(-50%) translateY(5px); }
+
+@media (min-width: 1100px) {
+  .hero-nen {
+    height: calc(100% - var(--nav-h));
+    object-fit: contain;
+    object-position: bottom right;
+    transform: translateX(10%);
+    right: calc(max(0px, (100% - var(--container))) / 2 + var(--mx-desk));
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -1202,36 +1249,39 @@ footer {
   <a href="#grups" data-nav="grups_mob">Groups & Schools</a>
   <a href="https://www.teatrepoliorama.com/ca/programacio/c/911-gaudi-el-despertar-del-geni.html"
      class="mm-cta" data-cta="nav_mobile"
-     target="_blank" rel="noopener"><img class="btn-icon" src="../assets/img/ticket.svg" alt=""> COMPRAR ENTRADES</a>
+     target="_blank" rel="noopener"><img class="btn-icon" src="../assets/img/ticket.svg" alt=""> BUY TICKETS</a>
 </div>
 
 <main>
 
 <!-- ══ HERO ══ -->
 <section id="hero" aria-label="Portada Gaudí: El despertar del geni">
-  <div class="hero-bg" role="img" aria-label="Cartell de l'espectacle"></div>
+  <div class="hero-bg" role="img" aria-label="Fons de l'espectacle"></div>
   <div class="hero-overlay"></div>
 
+  <!-- Nen posicionat a la dreta -->
+  <img class="hero-nen" src="../assets/img/gaudi.png" alt="" aria-hidden="true">
+
   <div class="hero-content">
-    <div class="reveal">
-      <span class="chip" style="font-size: 14px;">Casa Batlló presents</span>
-    </div>
+    <img class="hero-cb-presenta reveal"
+         src="../assets/img/cb-presenta.svg"
+         alt="Casa Batlló Presenta">
 
-    <h1 class="hero-brand-title reveal d1">
-      <img class="hero-text-primary" src="../assets/img/gaudi3.svg" alt="Gaudí">
-    </h1>
+    <img class="hero-logo-obra reveal d1"
+         src="../assets/img/logo-beix.svg"
+         alt="Gaudí: El despertar del geni">
 
-    <p class="hero-subtitle reveal d2">
-      A musical journey into the childhood of Gaudí
-    </p>
+    <img class="hero-text-cartell reveal d2"
+         src="../assets/img/text-cartell-en.svg"
+         alt="Un musical per viatjar a la infantesa de Gaudí">
 
     <div class="hero-btns reveal d3">
       <a href="https://www.teatrepoliorama.com/ca/programacio/c/911-gaudi-el-despertar-del-geni.html"
          class="btn-primary"
          data-cta="hero_primary"
          target="_blank" rel="noopener">
-         <img class="btn-icon" src="../assets/img/ticket.svg" alt="ticket-icon">
-        Buy Tickets
+        <img class="btn-icon" src="../assets/img/ticket.svg" alt="">
+        Buy tickets
       </a>
       <a href="#espectacle"
          class="btn-ghost-light"
