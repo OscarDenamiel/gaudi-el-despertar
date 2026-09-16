@@ -493,22 +493,23 @@ button { border: none; cursor: pointer; font: inherit; }
 
 @media (max-width: 899px) {
   .hero-content {
+    position: relative;
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 70px); /* Ajusta 70px según la altura real de tu header sticky */
-    padding-top: 40px; /* Distancia fija superior para el logo */
-    padding-bottom: 32px; /* Margen de seguridad para que los botones no queden pegados al borde inferior */
+    align-items: center;
+    text-align: center;
+    min-height: calc(100vh - var(--nav-h));
+    padding-top: 0;
+    padding-bottom: 32px;
+    justify-content: flex-end; /* la resta de blocs sempre a baix */
     box-sizing: border-box;
   }
 
   .hero-cb-presenta {
-    position: static;
+    position: absolute;
+    top: 40px;
     margin: 0;
-  }
-
-  /* Esto empuja el título de Gaudí y el resto de elementos hacia abajo */
-  .hero-content > *:nth-child(2) {
-    margin-top: auto;
+    z-index: 5;
   }
 }
 
